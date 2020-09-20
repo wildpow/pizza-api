@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "wildpow_pizza-api-executor",
+    "name": "wildpow_pizza-api",
+    "region": "us-west-2"
+  },
+  "api": {
+    "id": "focobmjc64",
+    "module": "api"
+  }
+}
