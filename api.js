@@ -3,8 +3,19 @@
 const Api = require("claudia-api-builder");
 const api = new Api();
 
-api.get("pizzas", () => {
-  return ["Capricciosa", "Quattro Formaggi", "Napoletana", "Margherita"];
-});
+const getPizzas = require("./handlers/get-pizzas");
+
+api.get("/", () => "Welcome to Pizza API");
+
+api.get("/pizzas", () => getPizzas());
+api.get(
+  "/pizzas/{id}",
+  (request) => {
+    return getPizzas(request.pathParams.id);
+  },
+  {
+    error: 404,
+  }
+);
 
 module.exports = api;
