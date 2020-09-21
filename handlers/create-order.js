@@ -1,0 +1,10 @@
+function createOrder(order) {
+  if (!order || !order.pizzaId || !order.address) {
+    throw new Error(
+      "To order pizza please provide pizza type amd address where pizza should be delivered"
+    );
+  }
+  return {};
+}
+
+module.exports = createOrder;
